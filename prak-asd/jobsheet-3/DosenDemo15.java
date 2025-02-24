@@ -25,6 +25,7 @@ public class DosenDemo15 {
 
       arrayOfDosen[i] = new Dosen15(kode, nama, jnsKelamin, usia);
     }
+    sc.close();
     // FOR EACH (menampilkan data)
     int i = 1;
     for (Dosen15 dosen : arrayOfDosen) {
@@ -36,5 +37,13 @@ public class DosenDemo15 {
       System.out.println("------------------------------------------");
       i++;
     }
+
+    DataDosen15 infoDosen = new DataDosen15();
+    infoDosen.dataSemuaDosen(arrayOfDosen);
+    infoDosen.jumlahDosenPerJenisKelamin(arrayOfDosen);
+    infoDosen.rerataUsiaDosenPerJenisKelamin(arrayOfDosen);
+    infoDosen.infoDosenPalingTua(arrayOfDosen);
+    infoDosen.infoDosenPalingMuda(arrayOfDosen);
+
   }
 }
