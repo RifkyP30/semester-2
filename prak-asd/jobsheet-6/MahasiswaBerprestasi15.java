@@ -1,14 +1,14 @@
 public class MahasiswaBerprestasi15 {
 
-  Mahasiswa15[] listMhs = new Mahasiswa15[5];
-  int idx;
+  Mahasiswa15[] listMhs;
 
-  void tambah(Mahasiswa15 m) {
-    if (idx < listMhs.length) {
-      listMhs[idx] = m;
-      idx++;
-    } else {
-      System.out.println("data sudah penuh");
+  MahasiswaBerprestasi15(int jml) {
+    listMhs = new Mahasiswa15[jml];
+  }
+
+  void tambah(Mahasiswa15[] arr) {
+    for (int i = 0; i < arr.length; i++) {
+      listMhs[i] = arr[i];
     }
   }
 
