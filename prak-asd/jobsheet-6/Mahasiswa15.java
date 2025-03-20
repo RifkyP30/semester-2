@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Mahasiswa15 {
 
   String nim;
@@ -25,19 +23,6 @@ public class Mahasiswa15 {
     System.out.println("NIM: " + nim);
     System.out.println("Kelas: " + kelas);
     System.out.println("IPK: " + ipk);
-  }
-
-  void isiData() {
-    Scanner input15 = new Scanner(System.in);
-    System.out.print("Nama  : ");
-    nama = input15.nextLine();
-    System.out.print("NIM   : ");
-    nim = input15.nextLine();
-    System.out.print("Kelas : ");
-    kelas = input15.nextLine();
-    System.out.print("IPK   : ");
-    ipk = input15.nextDouble();
-    input15.nextLine();
   }
   
 }
