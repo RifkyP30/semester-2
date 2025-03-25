@@ -3,9 +3,13 @@ import java.util.Scanner;
 public class MahasiswaDemo15 {
 
   public static void main(String[] args) {
-    MahasiswaBerprestasi15 list = new MahasiswaBerprestasi15();
     Scanner sc = new Scanner(System.in);
-    int jmlMhs = 5;
+    
+    System.out.print("Masukkan jumlah mahasiswa: ");
+    int jmlMhs = sc.nextInt();
+    sc.nextLine();
+
+    MahasiswaBerprestasi15 list = new MahasiswaBerprestasi15(jmlMhs);
 
     for (int i = 0; i < jmlMhs; i++) {
       System.out.println("Masukkan Data Mahasiswa ke-" + (i + 1));
@@ -22,6 +26,7 @@ public class MahasiswaDemo15 {
       list.tambah(new Mahasiswa15(nim, nama, kelas, ipk));
     }
 
+    list.insertionSort();
     list.tampil();
     // melakukan pencarian data sequential
     System.out.println("---------------------------------------------------");
