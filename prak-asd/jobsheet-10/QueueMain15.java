@@ -19,6 +19,10 @@ public class QueueMain15 {
           System.out.print("Masukkan data baru: ");
           int dataMasuk = sc.nextInt();
           Q.enqueue(dataMasuk);
+          if (Q.isFull()) {
+            System.out.println("Data sudah penuh!");
+            pilih = 0; // untuk menghentikan program
+          }
           break;
         case 2:
           int dataKeluar = Q.dequeue();
@@ -26,6 +30,11 @@ public class QueueMain15 {
             System.out.println("Data yang dikeluarkan: " + dataKeluar);
             break;
           }
+          if (Q.isEmpty()) {
+            System.out.println("Tidak ada data untuk dikeluarkan!");
+            pilih = 0; // untuk menghentikan program
+          }
+          break;
         case 3:
           Q.print();
           break;
