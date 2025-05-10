@@ -62,8 +62,11 @@ public class KRSMain15 {
         case 8:
           antrian.kosongkanAntrian();
           break;
+        case 0:
+          System.out.println("Terima Kasih.");
+          break;
         default: 
-          System.out.println("Input tidak valid");
+          System.out.println("Pilihan tidak valid");
       }
     } while (pilihan != 0);
 
