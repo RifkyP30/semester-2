@@ -120,4 +120,105 @@ public class DoubleLinkedList15 {
     }
     return null;
   }
+
+  // fungsi menambahkan node pada indeks tertentu
+  void add(int index, Mahasiswa15 data) {
+    if (isEmpty()) {
+      System.out.println("List masih kosong.");
+      return;
+    }
+
+    Node15 nodeBaru = new Node15(data);
+    Node15 current = head;
+    for (int i = 0; i < index - 1; i++) {
+      current = current.next;
+    }
+
+    current.next.prev = nodeBaru;
+    nodeBaru.next = current.next;
+    current.next = nodeBaru;
+    nodeBaru.prev = current; 
+  }
+
+  // fungsi menghapus node setelah data key
+  void removeAfter(String nimKey) {
+    if (!isEmpty()) {
+      Node15 current = head;
+      while (current != null && !current.data.nim.equals(nimKey)) {
+        current = current.next;
+      }
+
+      if (current == null) {
+        System.out.println("Node dengan NIM " + nimKey + " tidak ditemukan.");
+        return;
+      }
+      current.next.next.prev = current;
+      current.next = current.next.next;
+      System.out.println("Node berhasil dihapus.");
+    } else {
+      System.out.println("List kosong!");
+    }
+  }
+
+  // fungsi menghapus node pada indeks tertentu
+  void remove(int idx) {
+    if (!isEmpty()) {
+      Node15 current = head;
+      for (int i = 0; i < idx; i++) {
+        current = current.next;
+      }
+      current.prev.next = current.next;
+      current.next.prev = current.prev;
+      System.out.println("Node berhasil dihapus.");
+    } else {
+      System.out.println("List kosong!");
+    }
+  }
+
+  // fungsi menampilkan data node head, tail, dan indeks tertentu
+  void getFirst() {
+    if (!isEmpty()) {
+      System.out.println("Node head:");
+      head.data.tampil();
+    } else {
+      System.out.println("List kosong!");
+    }
+  }
+
+  void getLast() {
+    if (!isEmpty()) {
+      System.out.println("Node tail:");
+      tail.data.tampil();
+    } else {
+      System.out.println("List kosong!");
+    }
+  }
+
+  void getIndex(int idx) {
+    if (!isEmpty()) {
+      Node15 current = head;
+      for (int i = 0; i < idx; i++) {
+        current = current.next;
+      }
+      System.out.println("Node pada indeks ke-" + idx + ": ");
+      current.data.tampil();
+    } else {
+      System.out.println("List kosong!");
+    }
+  }
+
+  // fungsi menampilkan jumlah node dalam list
+  void jumlah() {
+    if (!isEmpty()) {
+      Node15 current = head;
+      int total = 0;
+      while (current != null) {
+        total++;
+        current = current.next;
+      }
+      System.out.println("Jumlah node = " + total);
+    } else {
+      System.out.println("List kosong!");
+    }
+  }
 }

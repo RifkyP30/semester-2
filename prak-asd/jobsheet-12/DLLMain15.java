@@ -14,6 +14,13 @@ public class DLLMain15 {
       System.out.println("4. Hapus di akhir");
       System.out.println("5. Tampilkan data");
       System.out.println("6. Cari mahasiswa berdasarkan NIM");
+      System.out.println("7. Tambah node pada indeks tertentu");
+      System.out.println("8. Hapus node setelah data key");
+      System.out.println("9. Hapus node pada indeks tertentu");
+      System.out.println("10. Tampilkan node head");
+      System.out.println("11. Tampilkan node tail");
+      System.out.println("12. Tampilkan node pada indeks tertentu");
+      System.out.println("13. Tampilkan jumlah node dalam list");
       System.out.println("0. Keluar");
       System.out.print("Pilih menu: ");
       pilihan = scan.nextInt();
@@ -42,6 +49,33 @@ public class DLLMain15 {
             System.out.println("Data tidak ditemukan.");
           }
         }
+        case 7 -> {
+          Mahasiswa15 mhsBaru = inputMahasiswa(scan);
+          System.out.print("Masukkan indeks: ");
+          int idx = scan.nextInt();
+          scan.nextLine();
+          list.add(idx, mhsBaru);
+        }
+        case 8 -> {
+          System.out.print("Masukkan NIM: ");
+          String nimKey = scan.nextLine();
+          list.removeAfter(nimKey);
+        }
+        case 9 -> {
+          System.out.print("Masukkan indeks: ");
+          int ind = scan.nextInt();
+          scan.nextLine();
+          list.remove(ind);
+        }
+        case 10 -> list.getFirst();
+        case 11 -> list.getLast();
+        case 12 -> {
+          System.out.print("Masukkan indeks: ");
+          int idxDicari = scan.nextInt();
+          scan.nextLine();
+          list.getIndex(idxDicari);
+        }
+        case 13 -> list.jumlah();
         case 0 -> System.out.println("Keluar dari program.");
         default -> System.out.println("Pilihan tidak valid!");
       }
