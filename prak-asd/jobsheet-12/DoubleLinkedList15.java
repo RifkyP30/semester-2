@@ -81,9 +81,13 @@ public class DoubleLinkedList15 {
       System.out.println("List kosong, tidak bisa dihapus.");
       return;
     }
+    System.out.println("Data sudah berhasil dihapus.");
+    System.out.println("Data yang terhapus:");
     if (head == tail) {
+      head.data.tampil();
       head = tail = null;
     } else {
+      head.data.tampil();
       head = head.next;
       head.prev = null;
     }
@@ -94,9 +98,13 @@ public class DoubleLinkedList15 {
       System.out.println("List kosong, tidak bisa dihapus.");
       return;
     }
+    System.out.println("Data sudah berhasil dihapus.");
+    System.out.println("Data yang terhapus:");
     if (head == tail) {
+      tail.data.tampil();
       head = tail = null;
     } else {
+      tail.data.tampil();
       tail = tail.prev;
       tail.next = null;
     }
