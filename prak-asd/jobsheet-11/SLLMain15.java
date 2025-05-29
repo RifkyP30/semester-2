@@ -1,45 +1,29 @@
-import java.util.Scanner;
-
 public class SLLMain15 {
   public static void main(String[] args) {
-    Scanner scan15 = new Scanner(System.in);
     SingleLinkedList15 sll = new SingleLinkedList15();
-    int pilih;
 
-    do {
-      System.out.println("\n1. Tambah Data");
-      System.out.println("2. Tampilkan Data");
-      System.out.println("0. Keluar");
-      System.out.print("Pilih menu: ");
-      pilih = scan15.nextInt();
-      scan15.nextLine();
+    Mahasiswa15 mhs1 = new Mahasiswa15("244107001", "Rifky", "1F", 3.7);
+    Mahasiswa15 mhs2 = new Mahasiswa15("244107012", "Julian", "1F", 3.8);
+    Mahasiswa15 mhs3 = new Mahasiswa15("244107032", "Hanip", "1F", 3.9);
+    Mahasiswa15 mhs4 = new Mahasiswa15("244107024", "Gilang", "1F", 3.7);
 
-      switch (pilih) {
-        case 1:
-          System.out.println("Masukkan data mahasiswa!");
-          System.out.print("Nama  : ");
-          String nama = scan15.nextLine();
-          System.out.print("NIM   : ");
-          String nim = scan15.nextLine();
-          System.out.print("Kelas : ");
-          String kelas = scan15.nextLine();
-          System.out.print("IPK   : ");
-          double ipk = scan15.nextDouble();
-          Mahasiswa15 mhs = new Mahasiswa15(nim, nama, kelas, ipk);
-          sll.addLast(mhs);
-          break;
-        case 2:
-          sll.print();
-          break;
-        case 0:
-          System.out.println("=== SELESAI ===");
-          break;
-        default:
-          System.out.println("Menu tidak valid!");
-      }
-    } while (pilih != 0);
+    sll.addLast(mhs1);
+    sll.addLast(mhs2);
+    sll.addLast(mhs3);
+    sll.addLast(mhs4);
 
-    scan15.close();
+    System.out.println("data index 1 : ");
+    sll.getData(1);
+    System.out.println();
+
+    System.out.println("data mahasiswa an Hanip berada pada index : " + sll.indexOf("hanip"));
+    System.out.println();
+
+    sll.removeFirst();
+    sll.removeLast();
+    sll.print();
+    sll.removeAt(0);
+    sll.print();
     
   }
 }
