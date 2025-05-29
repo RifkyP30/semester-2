@@ -66,9 +66,13 @@ public class DoubleLinkedList15 {
 
   void print() {
     Node15 current = head;
-    while (current != null) {
-      current.data.tampil();
-      current = current.next;
+    if (!isEmpty()) {
+      while (current != null) {
+        current.data.tampil();
+        current = current.next;
+      }
+    } else {
+      System.out.println("List kosong!");
     }
   }
 
